@@ -1,75 +1,95 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Mail } from "lucide-react";
-import heroImage from "@/assets/hero-professional.jpg";
+import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 
 const HeroSection = () => {
+  const scrollToNextSection = () => {
+    const nextSection = document.querySelector('#about');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Professional background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-background/90" />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
       
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-6">
-            <span className="block text-foreground">Giri Sai Vinay</span>
-          </h1>
-          
-          <div className="space-y-4 mb-8">
-            <p className="text-caps text-muted-foreground mb-2">
-              Full Stack Developer · Associate Engineer @ Ascendion
-            </p>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
-              Merging performance and clean design — from frontend to backend
-            </p>
+      {/* Main Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+        <div className="space-y-8 animate-fade-in">
+          {/* Badge */}
+          <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold border border-primary/20">
+            Available for opportunities
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              asChild
-              className="btn-professional group"
-            >
-              <a
-                href="https://linkedin.com/in/girisaivinayguttula"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="uppercase tracking-widest text-sm"
-              >
-                <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                LinkedIn
-              </a>
+          {/* Main Heading */}
+          <div className="space-y-6">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+              <span className="block gradient-text">Giri Sai Vinay</span>
+            </h1>
+            
+            <div className="space-y-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground">
+                Full Stack Engineer
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Crafting scalable web applications with modern technologies. 
+                Specialized in Angular, Node.js, and AI/ML integration.
+              </p>
+            </div>
+          </div>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+            <Button size="lg" className="btn-modern group">
+              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              Get In Touch
             </Button>
             
-            <Button
-              asChild
-              variant="outline"
-              className="btn-outline-professional group"
-            >
-              <a
-                href="mailto:girisaivinayguttula@gmail.com"
-                className="uppercase tracking-widest text-sm"
-              >
-                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                Email
-              </a>
+            <Button variant="outline" size="lg" className="btn-outline-modern group">
+              <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              Download CV
             </Button>
+          </div>
+          
+          {/* Social Links */}
+          <div className="flex justify-center space-x-6 pt-8">
+            <a
+              href="https://github.com/Girisaivinayguttula"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a
+              href="https://linkedin.com/in/girisaivinayguttula"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="mailto:girisaivinayguttula@gmail.com"
+              className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110"
+            >
+              <Mail className="w-6 h-6" />
+            </a>
           </div>
         </div>
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
+      <button
+        onClick={scrollToNextSection}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 p-2 rounded-full hover:bg-muted transition-all duration-300 group"
+      >
+        <ArrowDown className="w-6 h-6 animate-bounce group-hover:translate-y-1 transition-transform" />
+      </button>
     </section>
   );
 };
