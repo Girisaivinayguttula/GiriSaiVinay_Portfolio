@@ -2,7 +2,7 @@ import { Hero } from "@/components/ui/hero-with-group-of-images-text-and-two-but
 
 const NewHeroSection = () => {
   return (
-    <section id="hero" className="pt-20">
+    <section id="hero" className="pt-8">
       <Hero />
     </section>
   );

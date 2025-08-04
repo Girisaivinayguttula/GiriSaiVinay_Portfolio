@@ -1,10 +1,11 @@
 import { MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { memo } from "react";
 
-function Hero() {
+const Hero = memo(function Hero() {
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full py-20 lg:py-8">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
           <div className="flex gap-4 flex-col">
@@ -16,7 +17,7 @@ function Hero() {
                 Giri Sai Vinay
               </h1>
               <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-                Full Stack Engineer crafting scalable web applications with modern technologies. 
+                Full Stack Engineer crafting scalable web applications with modern technologies.
                 Specialized in Angular, Node.js, and AI/ML integration.
               </p>
             </div>
@@ -38,6 +39,6 @@ function Hero() {
       </div>
     </div>
   );
-}
+});
 
 export { Hero };

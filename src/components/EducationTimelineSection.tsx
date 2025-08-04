@@ -20,7 +20,7 @@ const EducationTimelineSection = () => {
               </p>
             </div>
           </div>
-          
+
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Award className="w-4 h-4 text-yellow-500" />
@@ -28,7 +28,7 @@ const EducationTimelineSection = () => {
                 CGPA: 8.09/10.0
               </span>
             </div>
-            
+
             <div>
               <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-2">
                 <Brain className="w-4 h-4 text-purple-500" />
@@ -38,7 +38,7 @@ const EducationTimelineSection = () => {
                 Focused curriculum on artificial intelligence and machine learning technologies.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-green-500" />
@@ -47,13 +47,13 @@ const EducationTimelineSection = () => {
               <div className="grid grid-cols-2 gap-2">
                 {[
                   "Machine Learning",
-                  "Artificial Neural Networks", 
+                  "Artificial Neural Networks",
                   "Deep Learning",
                   "Modern AI Networks",
                   "Data Structures & Algorithms",
                   "Digital Signal Processing"
                 ].map((course, index) => (
-                  <span 
+                  <span
                     key={index}
                     className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-gray-700 dark:text-gray-300"
                   >
@@ -62,10 +62,10 @@ const EducationTimelineSection = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/10 rounded-lg border border-blue-200 dark:border-blue-800">
               <p className="text-sm text-blue-800 dark:text-blue-300">
-                <strong>Academic Achievement:</strong> Maintained consistent academic performance throughout the program 
+                <strong>Academic Achievement:</strong> Maintained consistent academic performance throughout the program
                 with strong focus on practical applications of AI/ML concepts in real-world projects.
               </p>
             </div>
@@ -90,13 +90,13 @@ const EducationTimelineSection = () => {
               </p>
             </div>
           </div>
-          
+
           <div className="space-y-3">
             <p className="text-sm text-gray-600 dark:text-gray-300">
-              Embarked on my engineering journey with a strong foundation in mathematics, physics, and computer science. 
+              Embarked on my engineering journey with a strong foundation in mathematics, physics, and computer science.
               Developed early interest in programming and technology during foundational courses.
             </p>
-            
+
             <div>
               <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-2">Early Achievements</h4>
               <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
@@ -122,7 +122,7 @@ const EducationTimelineSection = () => {
           </p>
         </div>
       </div>
-      <Timeline data={educationData} />
+      <Timeline data={educationData} showHeader={false} />
     </section>
   );
 };
