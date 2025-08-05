@@ -1,9 +1,9 @@
-import { Hero } from "@/components/ui/hero-with-group-of-images-text-and-two-buttons";
+import { HeroSection } from "@/components/ui/hero-section-6";
 
 const NewHeroSection = () => {
   return (
     <section id="hero" className="pt-8">
-      <Hero />
+      <HeroSection />
     </section>
   );
 };

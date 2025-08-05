@@ -1,4 +1,4 @@
-import { memo, lazy, Suspense } from "react";
+import { memo, lazy, Suspense, useState, useEffect } from "react";
 import HeaderNavigation from "@/components/HeaderNavigation";
 import NewHeroSection from "@/components/NewHeroSection";
 import SkillsCarousel from "@/components/SkillsCarousel";
@@ -6,12 +6,23 @@ import TimelineSection from "@/components/TimelineSection";
 import EducationTimelineSection from "@/components/EducationTimelineSection";
 import ProjectsBentoSection from "@/components/ProjectsBentoSection";
 import NewFooter from "@/components/NewFooter";
+import LoadingScreen from "@/components/LoadingScreen";
 
 // Lazy load components that are below the fold
 const LazyProjectsBentoSection = lazy(() => import("@/components/ProjectsBentoSection"));
 const LazyNewFooter = lazy(() => import("@/components/NewFooter"));
 
 const Index = memo(() => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  }
+
   return (
     <main className="min-h-screen bg-background">
       <HeaderNavigation />
