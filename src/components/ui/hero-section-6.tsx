@@ -71,8 +71,7 @@ export function HeroSection() {
                         <div className="absolute inset-0 -mx-4 rounded-3xl p-3 lg:col-span-3">
                             <div aria-hidden className="absolute z-[1] inset-0 bg-gradient-to-r from-background from-35%" />
                             <div className="relative">
-                                <img className="hidden dark:block" src="https://tailark.com/_next/image?url=%2Fmusic.png&w=3840&q=75" alt="app illustration" width={2796} height={2008} />
-                                <img className="dark:hidden" src="https://tailark.com/_next/image?url=%2Fmusic-light.png&w=3840&q=75" alt="app illustration" width={2796} height={2008} />
+                                <img src="/lovable-uploads/85443700-b6c2-4fd5-a314-3b3ae66edfa1.png" alt="Professional portfolio showcase" width={2796} height={2008} className="w-full h-auto object-cover rounded-lg" />
                             </div>
                         </div>
                     </div>
