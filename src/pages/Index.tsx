@@ -5,6 +5,7 @@ import SkillsCarousel from "@/components/SkillsCarousel";
 import TimelineSection from "@/components/TimelineSection";
 import EducationTimelineSection from "@/components/EducationTimelineSection";
 import LoadingScreen from "@/components/LoadingScreen";
+import AnimatedSection from "@/components/AnimatedSection";
 
 // Lazy load components that are below the fold
 const LazyProjectsBentoSection = lazy(() => import("@/components/ProjectsBentoSection"));
@@ -25,15 +26,30 @@ const Index = memo(() => {
     <main className="min-h-screen bg-background">
       <HeaderNavigation />
       <NewHeroSection />
-      <SkillsCarousel />
-      <TimelineSection />
-      <EducationTimelineSection />
-      <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
-        <LazyProjectsBentoSection />
-      </Suspense>
-      <Suspense fallback={<div className="h-32 flex items-center justify-center">Loading...</div>}>
-        <LazyNewFooter />
-      </Suspense>
+      
+      <AnimatedSection animation="fade-up" delay={200}>
+        <SkillsCarousel />
+      </AnimatedSection>
+      
+      <AnimatedSection animation="slide-up" delay={300}>
+        <TimelineSection />
+      </AnimatedSection>
+      
+      <AnimatedSection animation="fade-up" delay={200}>
+        <EducationTimelineSection />
+      </AnimatedSection>
+      
+      <AnimatedSection animation="scale-in" delay={400}>
+        <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
+          <LazyProjectsBentoSection />
+        </Suspense>
+      </AnimatedSection>
+      
+      <AnimatedSection animation="fade-in" delay={100}>
+        <Suspense fallback={<div className="h-32 flex items-center justify-center">Loading...</div>}>
+          <LazyNewFooter />
+        </Suspense>
+      </AnimatedSection>
     </main>
   );
 });
