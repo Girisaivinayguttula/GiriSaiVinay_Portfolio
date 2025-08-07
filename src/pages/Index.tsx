@@ -4,8 +4,6 @@ import NewHeroSection from "@/components/NewHeroSection";
 import SkillsCarousel from "@/components/SkillsCarousel";
 import TimelineSection from "@/components/TimelineSection";
 import EducationTimelineSection from "@/components/EducationTimelineSection";
-import ProjectsBentoSection from "@/components/ProjectsBentoSection";
-import NewFooter from "@/components/NewFooter";
 import LoadingScreen from "@/components/LoadingScreen";
 
 // Lazy load components that are below the fold

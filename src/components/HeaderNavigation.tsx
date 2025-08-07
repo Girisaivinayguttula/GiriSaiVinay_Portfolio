@@ -24,16 +24,18 @@ const HeaderNavigation = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: 0.1,
+      rootMargin: '-10% 0px -70% 0px',
+      threshold: [0.1, 0.2, 0.3, 0.4, 0.5],
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
+      const visibleEntries = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      
+      if (visibleEntries.length > 0) {
+        setActiveSection(visibleEntries[0].target.id);
+      }
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
@@ -48,7 +50,7 @@ const HeaderNavigation = () => {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [tabs]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
