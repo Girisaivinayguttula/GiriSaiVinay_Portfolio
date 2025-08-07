@@ -1,11 +1,8 @@
 import { Timeline } from "@/components/ui/timeline";
-
 const TimelineSection = () => {
-  const timelineData = [
-    {
-      title: "2024",
-      content: (
-        <div>
+  const timelineData = [{
+    title: "2024",
+    content: <div>
           <div className="mb-6">
             <h4 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
               Associate Engineer - Ascendion
@@ -20,12 +17,9 @@ const TimelineSection = () => {
             <p>• Implemented efficient REST API communication and improved test reliability by 70% using Karma + Jasmine.</p>
           </div>
         </div>
-      ),
-    },
-    {
-      title: "2023",
-      content: (
-        <div>
+  }, {
+    title: "2023",
+    content: <div>
           <div className="mb-6">
             <h4 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
               Junior Engineer - Phoenix Global
@@ -40,26 +34,11 @@ const TimelineSection = () => {
             <p>• Improved workflow automation saving ~4 hrs weekly via AI-backed reporting system.</p>
           </div>
           
-          <div className="mt-8">
-            <h4 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
-              Education Completed
-            </h4>
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
-              B.Tech in Electronics & Communication (AI/ML Specialization)
-            </p>
-            <div className="space-y-2 text-neutral-800 dark:text-neutral-200 text-sm">
-              <p>• GITAM University, Visakhapatnam</p>
-              <p>• GPA: 8.09/10.0</p>
-              <p>• Specialized in Machine Learning, AI Networks, Deep Learning</p>
-            </div>
-          </div>
+          
         </div>
-      ),
-    },
-    {
-      title: "2020-2024",
-      content: (
-        <div>
+  }, {
+    title: "2020-2024",
+    content: <div>
           <div className="mb-6">
             <h4 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
               University Projects & Learning
@@ -90,15 +69,9 @@ const TimelineSection = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-  ];
-
-  return (
-    <section id="experience">
+  }];
+  return <section id="experience">
       <Timeline data={timelineData} />
-    </section>
-  );
+    </section>;
 };
-
 export default TimelineSection;
