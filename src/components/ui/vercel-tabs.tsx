@@ -47,6 +47,16 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       }
     }, [activeIndex])
 
+    // Sync activeIndex with activeTab prop
+    useEffect(() => {
+      if (activeTab) {
+        const newActiveIndex = tabs.findIndex(tab => tab.id === activeTab)
+        if (newActiveIndex !== -1 && newActiveIndex !== activeIndex) {
+          setActiveIndex(newActiveIndex)
+        }
+      }
+    }, [activeTab, tabs, activeIndex])
+
     useEffect(() => {
       requestAnimationFrame(() => {
         const firstElement = tabRefs.current[0]
