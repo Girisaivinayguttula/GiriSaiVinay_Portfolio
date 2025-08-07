@@ -69,9 +69,13 @@ export function HeroSection() {
                             </div>
                         </div>
                         <div className="absolute inset-0 -mx-4 rounded-3xl p-3 lg:col-span-3">
-                            <div aria-hidden className="absolute z-[1] inset-0 bg-gradient-to-r from-background from-35%" />
+                            <div aria-hidden className="absolute z-[1] inset-0 bg-gradient-to-r from-background from-35% md:from-50% lg:from-35%" />
                             <div className="relative">
-                                <img src="/lovable-uploads/85443700-b6c2-4fd5-a314-3b3ae66edfa1.png" alt="Professional portfolio showcase" width={2796} height={2008} className="w-full h-auto object-cover rounded-lg" />
+                                <img 
+                                    src="/lovable-uploads/0e1e4b04-765b-47c9-a3a6-6de017b8e56e.png" 
+                                    alt="Professional portfolio showcase" 
+                                    className="w-full h-auto object-cover rounded-lg min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]" 
+                                />
                             </div>
                         </div>
                     </div>
