@@ -3,12 +3,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { WavyBackground } from "@/components/ui/wavy-background";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
   <ThemeProvider>
     <TooltipProvider>
+      <WavyBackground containerClassName="fixed inset-0 -z-10 pointer-events-none" speed="slow" waveOpacity={0.35} />
       <Toaster />
       <Sonner />
       <BrowserRouter>
