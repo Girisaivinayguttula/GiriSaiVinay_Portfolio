@@ -23,7 +23,7 @@ const Index = memo(() => {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen relative bg-transparent">
       <HeaderNavigation />
       <NewHeroSection />
       

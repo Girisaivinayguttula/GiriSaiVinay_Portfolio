@@ -9,7 +9,7 @@ export const WavyBackground = ({
   containerClassName,
   colors,
   waveWidth,
-  backgroundFill,
+  backgroundFill = "transparent",
   blur = 10,
   speed = "fast",
   waveOpacity = 0.5,
@@ -90,9 +90,14 @@ export const WavyBackground = ({
   let animationId: number;
   const render = () => {
     if (!ctx) return;
-    ctx.fillStyle = backgroundFill || "black";
+    if (backgroundFill === "transparent") {
+      ctx.clearRect(0, 0, w, h);
+    } else {
+      ctx.globalAlpha = waveOpacity || 0.5;
+      ctx.fillStyle = backgroundFill;
+      ctx.fillRect(0, 0, w, h);
+    }
     ctx.globalAlpha = waveOpacity || 0.5;
-    ctx.fillRect(0, 0, w, h);
     drawWave(5);
     animationId = requestAnimationFrame(render);
   };
