@@ -9,6 +9,13 @@ All colors MUST be HSL.
 */
 
 @layer base {
+
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   :root {
     /* Base Colors - Clean white background with professional text */
     --background: 0 0% 98%;

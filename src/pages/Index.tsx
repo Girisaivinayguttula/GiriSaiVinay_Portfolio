@@ -23,7 +23,7 @@ const Index = memo(() => {
   }
 
   return (
-    <main className="min-h-screen relative bg-transparent pt-20 md:pt-24">
+    <main className="min-h-screen relative bg-transparent">
       <HeaderNavigation />
       <NewHeroSection />
 
