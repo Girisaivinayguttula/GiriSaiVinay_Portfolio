@@ -1,14 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import {
-    CheckCircle,
-    Clock,
-    Star,
-    TrendingUp,
-    Video,
-    Globe,
-} from "lucide-react";
 
 export interface BentoItem {
     title: string;
@@ -26,45 +18,7 @@ interface BentoGridProps {
     items: BentoItem[];
 }
 
-const itemsSample: BentoItem[] = [
-    {
-        title: "Analytics Dashboard",
-        meta: "v2.4.1",
-        description:
-            "Real-time metrics with AI-powered insights and predictive analytics",
-        icon: <TrendingUp className="w-4 h-4 text-blue-500" />,
-        status: "Live",
-        tags: ["Statistics", "Reports", "AI"],
-        colSpan: 2,
-        hasPersistentHover: true,
-    },
-    {
-        title: "Task Manager",
-        meta: "84 completed",
-        description: "Automated workflow management with priority scheduling",
-        icon: <CheckCircle className="w-4 h-4 text-emerald-500" />,
-        status: "Updated",
-        tags: ["Productivity", "Automation"],
-    },
-    {
-        title: "Media Library",
-        meta: "12GB used",
-        description: "Cloud storage with intelligent content processing",
-        icon: <Video className="w-4 h-4 text-purple-500" />,
-        tags: ["Storage", "CDN"],
-        colSpan: 2,
-    },
-    {
-        title: "Global Network",
-        meta: "6 regions",
-        description: "Multi-region deployment with edge computing",
-        icon: <Globe className="w-4 h-4 text-sky-500" />,
-        status: "Beta",
-        tags: ["Infrastructure", "Edge"],
-    },
-];
-
-function BentoGrid({ items = itemsSample }: BentoGridProps) {
+function BentoGrid({ items }: BentoGridProps) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 max-w-7xl mx-auto">
             {items.map((item, index) => (
@@ -86,11 +40,10 @@ function BentoGrid({ items = itemsSample }: BentoGridProps) {
                     )}
                 >
                     <div
-                        className={`absolute inset-0 ${
-                            item.hasPersistentHover
+                        className={`absolute inset-0 ${item.hasPersistentHover
                                 ? "opacity-100"
                                 : "opacity-0 group-hover:opacity-100"
-                        } transition-opacity duration-300`}
+                            } transition-opacity duration-300`}
                     >
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:4px_4px]" />
                     </div>
@@ -141,11 +94,10 @@ function BentoGrid({ items = itemsSample }: BentoGridProps) {
                     </div>
 
                     <div
-                        className={`absolute inset-0 -z-10 rounded-xl p-px bg-gradient-to-br from-transparent via-gray-100/50 to-transparent dark:via-white/10 ${
-                            item.hasPersistentHover
+                        className={`absolute inset-0 -z-10 rounded-xl p-px bg-gradient-to-br from-transparent via-gray-100/50 to-transparent dark:via-white/10 ${item.hasPersistentHover
                                 ? "opacity-100"
                                 : "opacity-0 group-hover:opacity-100"
-                        } transition-opacity duration-300`}
+                            } transition-opacity duration-300`}
                     />
                 </div>
             ))}
@@ -153,4 +105,4 @@ function BentoGrid({ items = itemsSample }: BentoGridProps) {
     );
 }
 
-export { BentoGrid }
+export { BentoGrid };

@@ -32,7 +32,7 @@ const HeaderNavigation = () => {
       const visibleEntries = entries
         .filter(entry => entry.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      
+
       if (visibleEntries.length > 0) {
         setActiveSection(visibleEntries[0].target.id);
       }

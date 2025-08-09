@@ -75,7 +75,7 @@ const Logos3 = ({
   ],
 }: Logos3Props) => {
   return (
-    <section className="py-64">
+    <section className="py-48">
       <div className="container flex flex-col items-center text-center">
         <h1 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
           {heading}

@@ -26,25 +26,25 @@ const Index = memo(() => {
     <main className="min-h-screen relative bg-transparent">
       <HeaderNavigation />
       <NewHeroSection />
-      
+
       <AnimatedSection animation="fade-up" delay={200}>
         <SkillsCarousel />
       </AnimatedSection>
-      
+
       <AnimatedSection animation="slide-up" delay={300}>
         <TimelineSection />
       </AnimatedSection>
-      
+
       <AnimatedSection animation="fade-up" delay={200}>
         <EducationTimelineSection />
       </AnimatedSection>
-      
+
       <AnimatedSection animation="scale-in" delay={400}>
         <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
           <LazyProjectsBentoSection />
         </Suspense>
       </AnimatedSection>
-      
+
       <AnimatedSection animation="fade-in" delay={100}>
         <Suspense fallback={<div className="h-32 flex items-center justify-center">Loading...</div>}>
           <LazyNewFooter />

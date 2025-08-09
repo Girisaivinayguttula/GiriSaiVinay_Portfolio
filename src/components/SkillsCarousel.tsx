@@ -53,8 +53,8 @@ const SkillsCarousel = () => {
   ];
 
   return (
-    <section id="skills">
-      <Logos3 
+    <section id="skills" className="py-8 sm:py-12 md:py-4 px-2 sm:px-4">
+      <Logos3
         heading="Technologies & Skills"
         logos={techLogos}
       />

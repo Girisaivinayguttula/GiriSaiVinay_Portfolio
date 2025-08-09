@@ -9,7 +9,7 @@ const EducationTimelineSection = () => {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
-              <GraduationCap className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <GraduationCap className="w-5 h-5 text-white-600 dark:text-black-400" />
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
@@ -23,7 +23,7 @@ const EducationTimelineSection = () => {
 
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-yellow-500" />
+              <Award className="w-4 h-4 bg-gray-100 dark:bg-gray-800" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 CGPA: 8.09/10.0
               </span>
@@ -31,7 +31,7 @@ const EducationTimelineSection = () => {
 
             <div>
               <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-2">
-                <Brain className="w-4 h-4 text-purple-500" />
+                {/* <Brain className="w-4 h-4 bg-gray-100 dark:bg-gray-800" /> */}
                 AI/ML Specialization
               </h4>
               <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
@@ -41,7 +41,7 @@ const EducationTimelineSection = () => {
 
             <div>
               <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-green-500" />
+                <BookOpen className="w-4 h-4 bg-gray-100 dark:bg-gray-800" />
                 Key Coursework
               </h4>
               <div className="grid grid-cols-2 gap-2">
@@ -79,7 +79,7 @@ const EducationTimelineSection = () => {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center">
-              <BookOpen className="w-5 h-5 text-green-600 dark:text-green-400" />
+              <BookOpen className="w-5 h-5 text-gray-600 dark:text-gray-300" />
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
@@ -113,7 +113,7 @@ const EducationTimelineSection = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-muted/30">
+    <section id="education" className="py-20">
       <div className="container mx-auto px-4 mb-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Education</h2>

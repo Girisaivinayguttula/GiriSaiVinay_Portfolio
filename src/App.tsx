@@ -10,7 +10,7 @@ import NotFound from "./pages/NotFound";
 const App = () => (
   <ThemeProvider>
     <TooltipProvider>
-      <WavyBackground containerClassName="fixed inset-0 -z-10 pointer-events-none" speed="slow" waveOpacity={0.35} />
+      <WavyBackground containerClassName="fixed inset-0 -z-10 pointer-events-none" speed="fast" waveOpacity={0.35} />
       <Toaster />
       <Sonner />
       <BrowserRouter>

@@ -144,19 +144,19 @@ All colors MUST be HSL.
   }
 
   h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl font-bold;
+    @apply text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold;
   }
 
   h2 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold;
   }
 
   h3 {
-    @apply text-3xl md:text-4xl font-semibold;
+    @apply text-xl sm:text-3xl md:text-4xl font-semibold;
   }
 
   h4 {
-    @apply text-2xl md:text-3xl font-semibold;
+    @apply text-lg sm:text-2xl md:text-3xl font-semibold;
   }
 
   .text-caps {
@@ -164,7 +164,7 @@ All colors MUST be HSL.
   }
 
   .section-container {
-    @apply max-w-7xl mx-auto px-6 py-20 lg:py-32;
+    @apply max-w-7xl mx-auto px-2 sm:px-6 py-10 md:py-20 lg:py-32;
   }
 
   .gradient-text {
