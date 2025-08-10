@@ -12,7 +12,7 @@ export function HeroSection() {
         // Detect only once on mount
         if (typeof window !== 'undefined') {
             if (window.innerWidth < 640) {
-                setVideoSrc('https://res.cloudinary.com/dqj6ucyg3/video/upload/v1754807300/IMG_0672_roxqjo.mov'); // mobile
+                setVideoSrc('https://res.cloudinary.com/dqj6ucyg3/video/upload/v1754831619/IMG_0672_tnegjb.mov'); // mobile
             } else {
                 setVideoSrc('https://res.cloudinary.com/dqj6ucyg3/video/upload/v1754807476/Play_pt8kaw.mp4'); // tablet & desktop
             }
@@ -34,7 +34,7 @@ export function HeroSection() {
                 <section className="overflow-hidden">
                     <div className="relative mx-auto px-6 py-28 lg:py-20">
                         <div className="lg:flex lg:items-center lg:gap-12">
-                            <div className="relative z-10 mx-auto max-w-xl text-center mt-80 pt-10 sm:mt-0 lg:ml-0 lg:w-1/2 lg:text-left">
+                            <div className="relative z-10 mx-auto max-w-xl text-center mt-20 pt-10 sm:mt-0 lg:ml-0 lg:w-1/2 lg:text-left">
                                 <a
                                     href="/"
                                     className="rounded-lg mx-auto flex w-fit items-center gap-2 border p-1 pr-3 lg:ml-0"
