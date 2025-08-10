@@ -34,8 +34,8 @@ export function HeroSection() {
                 <section className="overflow-hidden">
                     <div className="relative mx-auto px-6 py-28 lg:py-20">
                         <div className="lg:flex lg:items-center lg:gap-12">
-                            <div className="relative z-10 mx-auto max-w-xl text-center mt-20 pt-10 sm:mt-0 lg:ml-0 lg:w-1/2 lg:text-left">
-                                <a
+                            <div className="relative z-10 mx-auto max-w-xl text-center mt-24 pt-10 sm:mt-0 lg:ml-0 lg:w-1/2 lg:text-left">
+                                {/* <a
                                     href="/"
                                     className="rounded-lg mx-auto flex w-fit items-center gap-2 border p-1 pr-3 lg:ml-0"
                                 >
@@ -45,7 +45,7 @@ export function HeroSection() {
                                     <span className="text-sm">For new opportunities</span>
                                     <span className="bg-(--color-border) block h-4 w-px"></span>
                                     <ArrowRight className="size-4" />
-                                </a>
+                                </a> */}
 
                                 <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl">
                                     Full Stack Developer & AI/ML Engineer
