@@ -4,7 +4,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 const NewHeroSection = () => {
   return (
     <AnimatedSection animation="fade-in" duration="0.8s">
-      <section id="hero" className="pt-48 md:pt-3">
+      <section id="hero" className="pt-11 md:pt-3">
         <HeroSection />
       </section>
     </AnimatedSection>
