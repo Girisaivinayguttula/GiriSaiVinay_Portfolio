@@ -27,17 +27,29 @@ const HeaderNavigation = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-10% 0px -70% 0px",
-      threshold: [0.1, 0.2, 0.3, 0.4, 0.5],
+      rootMargin: "-20% 0px -20% 0px", // More balanced detection area
+      threshold: [0, 0.25, 0.5, 0.75, 1],
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      // Get all visible entries and sort by their position and visibility
       const visibleEntries = entries
         .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        .map(entry => ({
+          id: entry.target.id,
+          ratio: entry.intersectionRatio,
+          top: entry.boundingClientRect.top,
+          element: entry.target
+        }))
+        .sort((a, b) => {
+          // Prioritize sections that are more centered in viewport
+          const centerA = Math.abs(a.top + (a.element as HTMLElement).offsetHeight / 2);
+          const centerB = Math.abs(b.top + (b.element as HTMLElement).offsetHeight / 2);
+          return centerA - centerB;
+        });
 
       if (visibleEntries.length > 0) {
-        setActiveSection(visibleEntries[0].target.id);
+        setActiveSection(visibleEntries[0].id);
       }
     };
 
