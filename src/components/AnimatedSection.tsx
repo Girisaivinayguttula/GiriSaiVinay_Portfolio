@@ -10,9 +10,9 @@ interface AnimatedSectionProps {
   duration?: string;
 }
 
-const AnimatedSection = ({ 
-  children, 
-  className = '', 
+const AnimatedSection = ({
+  children,
+  className = '',
   animation = 'fade-up',
   delay = 0,
   duration = '0.6s'
@@ -24,35 +24,35 @@ const AnimatedSection = ({
 
   const getAnimationClasses = () => {
     const baseClasses = 'transition-all ease-out';
-    const delayClass = delay > 0 ? `delay-[${delay}ms]` : '';
-    
+    // Use inline style for transitionDelay instead of dynamic Tailwind class to avoid ambiguity warnings
+
     if (!isVisible) {
       switch (animation) {
         case 'fade-up':
-          return `${baseClasses} opacity-0 translate-y-8 ${delayClass}`;
+          return `${baseClasses} opacity-0 translate-y-8`;
         case 'fade-in':
-          return `${baseClasses} opacity-0 ${delayClass}`;
+          return `${baseClasses} opacity-0`;
         case 'scale-in':
-          return `${baseClasses} opacity-0 scale-95 ${delayClass}`;
+          return `${baseClasses} opacity-0 scale-95`;
         case 'slide-up':
-          return `${baseClasses} opacity-0 translate-y-12 ${delayClass}`;
+          return `${baseClasses} opacity-0 translate-y-12`;
         case 'slide-left':
-          return `${baseClasses} opacity-0 translate-x-8 ${delayClass}`;
+          return `${baseClasses} opacity-0 translate-x-8`;
         case 'slide-right':
-          return `${baseClasses} opacity-0 -translate-x-8 ${delayClass}`;
+          return `${baseClasses} opacity-0 -translate-x-8`;
         default:
-          return `${baseClasses} opacity-0 translate-y-8 ${delayClass}`;
+          return `${baseClasses} opacity-0 translate-y-8`;
       }
     }
-    
-    return `${baseClasses} opacity-100 translate-y-0 translate-x-0 scale-100 ${delayClass}`;
+
+    return `${baseClasses} opacity-100 translate-y-0 translate-x-0 scale-100`;
   };
 
   return (
-    <div 
-      ref={ref} 
+    <div
+      ref={ref}
       className={cn(getAnimationClasses(), className)}
-      style={{ 
+      style={{
         transitionDuration: duration,
         transitionDelay: `${delay}ms`
       }}

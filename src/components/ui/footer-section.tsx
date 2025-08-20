@@ -11,7 +11,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Github, Instagram, Linkedin, Moon, Send, Sun, Mail } from "lucide-react"
+import { Github, Linkedin, Moon, Send, Sun, Mail } from "lucide-react"
 
 function Footerdemo() {
   const [isDarkMode, setIsDarkMode] = React.useState(true)

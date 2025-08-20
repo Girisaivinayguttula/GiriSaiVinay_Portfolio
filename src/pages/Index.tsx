@@ -1,4 +1,4 @@
-import { memo, lazy, Suspense, useState, useEffect } from "react";
+import { memo, lazy, Suspense, useState } from "react";
 import HeaderNavigation from "@/components/HeaderNavigation";
 import NewHeroSection from "@/components/NewHeroSection";
 import SkillsCarousel from "@/components/SkillsCarousel";

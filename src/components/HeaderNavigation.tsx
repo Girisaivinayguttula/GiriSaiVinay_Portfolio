@@ -1,5 +1,5 @@
 import { Tabs } from "@/components/ui/vercel-tabs";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 
 const HeaderNavigation = () => {
@@ -24,48 +24,57 @@ const HeaderNavigation = () => {
     }
   };
 
+  // Track active section by measuring which section's center is closest to the viewport center
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "-20% 0px -20% 0px", // More balanced detection area
-      threshold: [0, 0.25, 0.5, 0.75, 1],
-    };
+    let ticking = false;
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      // Get all visible entries and sort by their position and visibility
-      const visibleEntries = entries
-        .filter((entry) => entry.isIntersecting)
-        .map(entry => ({
-          id: entry.target.id,
-          ratio: entry.intersectionRatio,
-          top: entry.boundingClientRect.top,
-          element: entry.target
-        }))
-        .sort((a, b) => {
-          // Prioritize sections that are more centered in viewport
-          const centerA = Math.abs(a.top + (a.element as HTMLElement).offsetHeight / 2);
-          const centerB = Math.abs(b.top + (b.element as HTMLElement).offsetHeight / 2);
-          return centerA - centerB;
-        });
+    const updateActiveFromScroll = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let closestId = activeSection;
+      let closestDistance = Number.POSITIVE_INFINITY;
 
-      if (visibleEntries.length > 0) {
-        setActiveSection(visibleEntries[0].id);
+      for (const tab of tabs) {
+        const el = document.getElementById(tab.id);
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+        // Only consider if the section intersects the viewport at least partially
+        const intersects = rect.bottom > 0 && rect.top < window.innerHeight;
+        if (!intersects) continue;
+
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestId = tab.id;
+        }
+      }
+
+      if (closestId && closestId !== activeSection) {
+        setActiveSection(closestId);
       }
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateActiveFromScroll();
+        ticking = false;
+      });
+    };
 
-    tabs.forEach((tab) => {
-      const element = document.querySelector(`#${tab.id}`);
-      if (element) {
-        observer.observe(element);
-      }
-    });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    // Initial calculation
+    updateActiveFromScroll();
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener("scroll", onScroll as EventListener);
+      window.removeEventListener("resize", onScroll as EventListener);
     };
-  }, [tabs]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tabs, activeSection]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
