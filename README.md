@@ -1,6 +1,6 @@
 <div align="center">
 
-# giri-dev-folio
+# Giri Sai Vinay Portfolio
 
 Modern, animated, accessible developer portfolio built with Vite, React 18, TypeScript, Tailwind CSS, shadcn/ui (Radix primitives), and Framer Motion.
 
