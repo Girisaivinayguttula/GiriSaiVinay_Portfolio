@@ -1,77 +1,45 @@
-import { Timeline } from "@/components/ui/timeline";
+import { ArcTimeline } from "@/components/magicui/arc-timeline";
+import { Building2, Code, GraduationCap } from "lucide-react";
+
 const TimelineSection = () => {
-  const timelineData = [{
-    title: "2024",
-    content: <div>
-          <div className="mb-6">
-            <h4 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
-              Associate Engineer - Ascendion
-            </h4>
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
-              Jun 2024 – Present
-            </p>
-          </div>
-          <div className="space-y-3 text-neutral-800 dark:text-neutral-200 text-sm">
-            <p>• Migrated legacy modules to BSO architecture for United Airlines using Angular 18, enhancing modularity and performance.</p>
-            <p>• Collaborated with UX teams and client stakeholders to build responsive interfaces from complex requirements.</p>
-            <p>• Implemented efficient REST API communication and improved test reliability by 70% using Karma + Jasmine.</p>
-          </div>
-        </div>
-  }, {
-    title: "2023",
-    content: <div>
-          <div className="mb-6">
-            <h4 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
-              Junior Engineer - Phoenix Global
-            </h4>
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
-              Apr 2023 – Jun 2023
-            </p>
-          </div>
-          <div className="space-y-3 text-neutral-800 dark:text-neutral-200 text-sm mb-6">
-            <p>• Developed ML-based plagiarism recognizer for text/image with 50% reduction in academic violations.</p>
-            <p>• Built an instructor dashboard with color-coded visualizations and Excel export; cut review time by 70%.</p>
-            <p>• Improved workflow automation saving ~4 hrs weekly via AI-backed reporting system.</p>
-          </div>
-          
-          
-        </div>
-  }, {
-    title: "2020-2024",
-    content: <div>
-          <div className="mb-6">
-            <h4 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
-              University Projects & Learning
-            </h4>
-          </div>
-          <div className="space-y-4">
-            <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-4">
-              <h5 className="font-semibold text-neutral-800 dark:text-neutral-200 mb-2">
-                Intrusion Detection System (IoT)
-              </h5>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
-                Python, HTML, WEKA, NSL-KDD
-              </p>
-              <p className="text-sm text-neutral-800 dark:text-neutral-200">
-                Deployed ML-based IDS that reduced security breach risk by 40% and improved detection by 20%.
-              </p>
-            </div>
-            <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-4">
-              <h5 className="font-semibold text-neutral-800 dark:text-neutral-200 mb-2">
-                Movie Recommendation System
-              </h5>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
-                Collaborative Filtering, ML
-              </p>
-              <p className="text-sm text-neutral-800 dark:text-neutral-200">
-                Custom recommendation system resulting in a 50% increase in user satisfaction scores.
-              </p>
-            </div>
-          </div>
-        </div>
-  }];
-  return <section id="experience">
-      <Timeline data={timelineData} />
-    </section>;
+  const timelineData = [
+    {
+      time: "2024",
+      steps: [
+        {
+          icon: <Building2 className="w-4 h-4" />,
+          content: "Associate Engineer at Ascendion - Migrated United Airlines modules to BSO architecture using Angular 18"
+        }
+      ]
+    },
+    {
+      time: "2023", 
+      steps: [
+        {
+          icon: <Code className="w-4 h-4" />,
+          content: "Junior Engineer at Phoenix Global - Built ML plagiarism detector reducing violations by 50%"
+        }
+      ]
+    },
+    {
+      time: "2020-2024",
+      steps: [
+        {
+          icon: <GraduationCap className="w-4 h-4" />,
+          content: "University Projects - IoT Intrusion Detection System and Movie Recommendation System"
+        }
+      ]
+    }
+  ];
+
+  return (
+    <section id="experience" className="py-20">
+      <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Experience</h2>
+        <p className="text-muted-foreground">Journey through my career milestones</p>
+      </div>
+      <ArcTimeline data={timelineData} />
+    </section>
+  );
 };
 export default TimelineSection;
