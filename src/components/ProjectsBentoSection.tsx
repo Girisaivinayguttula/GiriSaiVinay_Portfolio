@@ -5,10 +5,10 @@ const ProjectsBentoSection = () => {
     alt: "Project screenshots",
     step1img1: "/lovable-uploads/cabaShop.png",
     step1img2: "/lovable-uploads/cabaHome.png",
-    step2img1: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1740&auto=format&fit=crop",
-    step2img2: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1674&auto=format&fit=crop",
-    step3img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1740&auto=format&fit=crop",
-    step4img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1742&auto=format&fit=crop",
+    step2img1: "",
+    step2img2: "",
+    step3img: "",
+    step4img: "",
   };
 
   return (
